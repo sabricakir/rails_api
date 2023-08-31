@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       defaults format: :json do
+        resources :posts
         get 'home/index', to: 'home#index'
       end
     end
