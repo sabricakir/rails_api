@@ -23,10 +23,8 @@ class Api::V1::PostsController < Api::V1::AuthenticateController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        format.json { render json: @post, status: :created, location: api_v1_post_url(@post) }
       else
-        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -36,10 +34,8 @@ class Api::V1::PostsController < Api::V1::AuthenticateController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+        format.json { render json: @post, status: :ok, location: api_v1_post_url(@post) }
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -50,8 +46,7 @@ class Api::V1::PostsController < Api::V1::AuthenticateController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: { message: 'Post was successfully destroyed.' }, status: :ok }
     end
   end
 
