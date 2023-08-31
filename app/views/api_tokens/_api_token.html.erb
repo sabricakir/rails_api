@@ -1,0 +1,8 @@
+<div class="bg-blue-100 border border-blue-300 p-4 rounded-md mb-4" id="<%= dom_id(api_token)%>">
+  <p class="text-blue-700"><%= api_token.token %></p>
+  <p class="text-blue-700">Active: <span class="uppercase font-bold"> <%= api_token.active %> </span></p>
+  <div class="mt-4">
+    <%= button_to 'Deactivate token', api_token_path(api_token), method: :patch, class: 'my-2 bg-slate-700 hover:bg-slate-900 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring focus:border-slate-300 mr-2' if api_token.active %>
+    <%= button_to 'Delete token', api_token_path(api_token), method: :delete, class: 'my-2 bg-red-400 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring focus:border-red-300' %>
+  </div>
+</div>
