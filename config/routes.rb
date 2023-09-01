@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   get  'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
   get  'sign_up', to: 'registrations#new'

@@ -176,6 +176,11 @@ GEM
     reline (0.3.8)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rswag-api (2.10.1)
+      railties (>= 3.1, < 7.1)
+    rswag-ui (2.10.1)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -233,6 +238,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.7, >= 7.0.7.2)
   redis (~> 4.0)
+  rswag-api
+  rswag-ui
   selenium-webdriver
   sprockets-rails
   stimulus-rails

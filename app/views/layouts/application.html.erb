@@ -18,8 +18,9 @@
           <div>
             <%= link_to 'Dashboard', root_path, class: 'text-white text-xl font-semibold' %>
           </div>
-          <div>
+          <div class="flex gap-x-4">
             <%= link_to 'API Tokens', api_tokens_path, class: 'text-white hover:underline' %>
+            <%= link_to 'API docs', rswag_api_path, target: :_blank, class: 'text-white hover:underline' %>
           </div>
         </div>
       </nav>
