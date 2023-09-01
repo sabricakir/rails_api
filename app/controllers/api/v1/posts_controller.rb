@@ -1,9 +1,13 @@
 class Api::V1::PostsController < Api::V1::AuthenticateController
+  include Pagy::Backend
+
   before_action :set_post, only: %i[show edit update destroy]
 
   # GET /posts or /posts.json
   def index
-    @posts = current_user.posts.all
+    user_posts = current_user.posts
+    @pagy, @posts = pagy(user_posts, items: 2)
+    @pagy_metadata = pagy_metadata(@pagy)
   end
 
   # GET /posts/1 or /posts/1.json

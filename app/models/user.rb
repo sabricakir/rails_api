@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  MAX_API_REQUESTS_PER_30_DAYS = 5
+  MAX_API_REQUESTS_PER_30_DAYS = 500
 
   has_many :email_verification_tokens, dependent: :destroy
   has_many :password_reset_tokens, dependent: :destroy
