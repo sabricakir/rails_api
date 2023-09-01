@@ -1,24 +1,13 @@
-# README
+# RAILS API PROJECT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails API project that allows you to create, read, update and delete users posts.
+<br><br>
+This project also include token generation and authentication, api request tracking, limiting, results pagination.
 
-Things you may want to cover:
+<hr>
+Bu proje, kullanıcıların gönderilerini oluşturmanıza, okumanıza, güncellemenize ve silmenize olanak tanıyan basit bir Rails API projesidir.
+<br><br>
+Bu proje aynı zamanda token oluşturma ve kimlik doğrulama, API istek takibi, sınırlama ve sonuçların sayfalandırılmasını da içermektedir.
+<br><br>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![RailsAPI](/public/project-preview.gif)
