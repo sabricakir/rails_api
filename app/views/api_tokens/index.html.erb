@@ -1,0 +1,21 @@
+<div class="max-w-7xl mx-auto mt-24">
+  <div class="bg-white p-6 rounded-md shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">Your API Tokens</h2>
+
+    <div id="api_tokens">
+      <% @api_tokens.each do |api_token| %>
+        <div class="bg-blue-100 border border-blue-300 p-4 rounded-md mb-4" id="<%= dom_id(api_token)%>">
+          <p class="text-blue-700"><%= api_token.token.truncate(10) %></p>
+          <p class="text-blue-700">Active: <span class="uppercase font-bold"> <%= api_token.active %> </span></p>
+          <p class="text-blue-700">Last Used: <span class="uppercase font-bold"> <%= api_token.last_used_at&.strftime("%d %m %Y %H:%M") || 'NEVER' %> </span></p>
+          <div class="mt-4">
+            <%= button_to 'Deactivate token', api_token_path(api_token), method: :patch, class: 'my-2 bg-slate-700 hover:bg-slate-900 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring focus:border-slate-300 mr-2' if api_token.active %>
+            <%= button_to 'Delete token', api_token_path(api_token), method: :delete, class: 'my-2 bg-red-400 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring focus:border-red-300' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+    <%= button_to 'Create another API Token', api_tokens_path, class: 'bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring focus:border-blue-300 mt-4 block' %>
+  </div>
+</div>

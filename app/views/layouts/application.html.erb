@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>RailsApi</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -12,7 +12,21 @@
   </head>
 
   <body class="bg-slate-200">
-    <main>
+    <header class="bg-sky-400 text-white p-4">
+      <nav class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center">
+          <div>
+            <%= link_to 'Dashboard', root_path, class: 'text-white text-xl font-semibold' %>
+          </div>
+          <div class="flex gap-x-4">
+            <%= link_to 'API Tokens', api_tokens_path, class: 'text-white hover:underline' %>
+            <%= link_to 'API docs', rswag_api_path, target: :_blank, class: 'text-white hover:underline' %>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4">
       <%= yield %>
     </main>
   </body>
